@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		
+		<link rel="stylesheet" type="text/css" href="css/layout.css"/>
+		<title>Physics Room learning tool</title>
+		
+	</head>
+
+	<body>
+	
+		<audio  id="theaudio"  src="sound/bouncing_sound.mp3"> </audio>
+		
+		<div     id="container">
+		</div>
+		
+		<div	id="home">
+			<TABLE bgcolor=white border=1 BORDERCOLOR=black width="950" cellpadding=-10 cellspacing=0 >
+				<tr>
+					<td class="center">
+						<p id="menuButton" style="color:GREEN; font-size:20px;">MENU DISPLAY <button type="button" onclick="menuShow_Hide()"><B>HIDE</B></button></p>
+					</td>
+					
+					<td class="center">
+						<button type="button" class="homeButtonSize" onclick="homeButton()"><B>HOME</B></button>
+					</td>
+					
+					<td class="center">
+						<button type="button" class="homeButtonSize" onclick="lightSwitch()"><B>LIGHT SWITCH</B></button>
+					</td>
+					
+					<td class="center">
+						<p id="menuButton" style="color:GREEN; font-size:20px;">Choose a texture for the world 
+							<button type="button" onclick="renderTextureSerious()"><B>Texture 1</B></button> 
+							<button type="button" onclick="renderTextureColourful()"><B>Texture 2</B></button> 
+							<button type="button" onclick="renderTextureSilly()"><B>Texture 3</B></button></p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		<div     id="menu">
+		
+			<!----Education---->
+			<div     id="educationLevel">
+				<TABLE bgcolor=white border=1 BORDERCOLOR=black width="400" cellpadding=-10 cellspacing=0 >
+					<tr>
+						<td class="center">
+							<p style="color:red; font-size:20px;">1. CHOOSE EDUCATION LEVEL BELOW.</p>
+						</td>
+					</tr>
+				</table>
+				<TABLE bgcolor=white border=1 BORDERCOLOR=black width="400" cellpadding=10 cellspacing=0 >
+					<tr>
+						<td onMouseOver="this.style.backgroundColor='#ffffcc'; this.style.cursor='hand';" class="center" onMouseOut=this.style.backgroundColor="white" >         
+							<button type="button" class="buttonSize" onclick="openJuniorCert()"><B>Junior Cert</B></button>
+						</td>
+
+						<td onMouseOver="this.style.backgroundColor='#ffffcc'; this.style.cursor='hand';" class="center" onMouseOut=this.style.backgroundColor="white" >         
+							<button type="button" class="buttonSize" onclick="openLeavingCert()"><B>Leaving Cert</B></button>
+						</td>
+
+						<td onMouseOver="this.style.backgroundColor='#ffffcc'; this.style.cursor='hand';" class="center" onMouseOut=this.style.backgroundColor="white" >         
+							<button type="button" class="buttonSize" onclick="open3rdLevel()"><B>Third level</B></button>
+						</td>
+					</tr>
+				</table>
+			</div>
+			
+			<!----Subjects---->
+			<div     id="Leaving_subject">
+				<TABLE bgcolor=white border=1 BORDERCOLOR=black width="400" cellpadding=-10 cellspacing=0 >
+					<tr>
+						<td class="center">
+							<p style="color:red; font-size:20px;">2. CHOOSE SUBJECT BELOW.</p>
+						</td>
+					</tr>
+				</table>
+				<TABLE bgcolor=white border=1 BORDERCOLOR=black width="400" cellpadding=10 cellspacing=0 >
+					<tr>
+						<td onMouseOver="this.style.backgroundColor='#ffffcc'; this.style.cursor='hand';" class="center" onMouseOut=this.style.backgroundColor="white" >         
+							<button type="button" class="buttonSize" onclick="
+								Leaving_Phys_questions.style.display = 'block'; 
+								Controls.style.display = 'block';
+								Leaving_subject.style.display = 'none';
+							"><B>Physics</B></button>
+						</td>
+
+						<td onMouseOver="this.style.backgroundColor='#ffffcc'; this.style.cursor='hand';" class="center" onMouseOut=this.style.backgroundColor="white" >         
+							<button type="button" class="buttonSize" onclick="
+								Leaving_AM_questions.style.display = 'block'; 
+								Controls.style.display = 'block';
+								Leaving_subject.style.display = 'none';
+							"><B>Applied Maths</B></button>
+						</td>
+					</tr>
+				</table>
+			</div>
+			
+			<div     id="Junior_subject">
+				<TABLE bgcolor=white border=1 BORDERCOLOR=black width="400" cellpadding=-10 cellspacing=0 >
+					<tr>
+						<td class="center">
+							<p style="color:red; font-size:20px;">2. CHOOSE SUBJECT BELOW.</p>
+						</td>
+					</tr>
+				</table>
+				<TABLE bgcolor=white border=1 BORDERCOLOR=black width="400" cellpadding=10 cellspacing=0 >
+					<tr>
+						<td onMouseOver="this.style.backgroundColor='#ffffcc'; this.style.cursor='hand';" class="center" onMouseOut=this.style.backgroundColor="white" >         
+							<button type="button" class="buttonSize" onclick="
+								Junior_questions.style.display = 'block'; 
+								Controls.style.display = 'block';
+								Junior_subject.style.display = 'none';
+							"><B>Physics</B></button>
+						</td>
+					</tr>
+				</table>
+			</div>
+			
+			<!----Questions---->
+			<div     id="Junior_questions">
+				<TABLE bgcolor=white border=1 BORDERCOLOR=black width="400" cellpadding=-10 cellspacing=0 >
+					<tr>
+						<td class="center">
+							<p style="color:red; font-size:20px;">3. CHOOSE QUESTION BELOW.</p>
+						</td>
+					</tr>
+				</table>
+				<TABLE bgcolor=white border=1 BORDERCOLOR=black width="400" cellpadding=10 cellspacing=0 >
+					<tr>
+						<td onMouseOver="this.style.backgroundColor='#ffffcc'; this.style.cursor='hand';" class="center" onMouseOut=this.style.backgroundColor="white" >         
+							<button type="button" class="buttonSize" onclick="Jun2011Q9aii()"><B>Higher 2011 Q9 a ii</B></button>
+						</td>
+
+						<td onMouseOver="this.style.backgroundColor='#ffffcc'; this.style.cursor='hand';" class="center" onMouseOut=this.style.backgroundColor="white" >         
+							<button type="button" class="buttonSize" onclick="Jun2011Q9aiii()"><B>Higher 2009 Q9 a iii</B></button>
+						</td>
+					</tr>	
+					<tr>	
+						<td bgcolor="#f7ec8f" onMouseOver="this.style.backgroundColor='#ffffcc'; this.style.cursor='hand';" class="center" onMouseOut=this.style.backgroundColor="#f7ec8f" >         
+							<button type="button" class="buttonSize" onclick="makeJuniorCertGUI()"><B>Build your own</B></button>
+						</td>
+					</tr>
+				</table>
+			</div>
+			
+			<div     id="Leaving_Phys_questions">
+				<TABLE bgcolor=white border=1 BORDERCOLOR=black width="400" cellpadding=-10 cellspacing=0 >
+					<tr>
+						<td class="center">
+							<p style="color:red; font-size:20px;">3. CHOOSE QUESTION BELOW.</p>
+						</td>
+					</tr>
+				</table>
+				<TABLE bgcolor=white border=1 BORDERCOLOR=black width="400" cellpadding=10 cellspacing=0 >
+					<tr>
+						<td onMouseOver="this.style.backgroundColor='#ffffcc'; this.style.cursor='hand';" class="center" onMouseOut=this.style.backgroundColor="white" >         
+							<button type="button" class="buttonSize" onclick="LeaPhy2015Q5b()"><B>Ordinary 2015 Q5 b</B></button>
+						</td>
+						
+						<td onMouseOver="this.style.backgroundColor='#ffffcc'; this.style.cursor='hand';" class="center" onMouseOut=this.style.backgroundColor="white" >         
+							<button type="button" class="buttonSize" onclick="LeaPhy2015Q5a()"><B>Higher 2015 Q5 a</B></button>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#f7ec8f" onMouseOver="this.style.backgroundColor='#ffffcc'; this.style.cursor='hand';" class="center" onMouseOut=this.style.backgroundColor="#f7ec8f" >         
+							<button type="button" bgcolor="#eef442" class="buttonSize" onclick="makeLeavingCertGUI()"><B>Build your own</B></button>
+						</td>
+					</tr>
+				</table>
+			</div>
+			
+			<div     id="Leaving_AM_questions">
+				<TABLE bgcolor=white border=1 BORDERCOLOR=black width="400" cellpadding=-10 cellspacing=0 >
+					<tr>
+						<td class="center">
+							<p style="color:red; font-size:20px;">3. CHOOSE QUESTION BELOW.</p>
+						</td>
+					</tr>
+				</table>
+				<TABLE bgcolor=white border=1 BORDERCOLOR=black width="400" cellpadding=10 cellspacing=0 >
+					<tr>
+						<td onMouseOver="this.style.backgroundColor='#ffffcc'; this.style.cursor='hand';" class="center" onMouseOut=this.style.backgroundColor="white" >         
+							<button type="button" class="buttonSize" onclick="LeaAM2016Q1b()"><B>Higher 2016 Q1 b</B></button>
+						</td>
+						
+						<td onMouseOver="this.style.backgroundColor='#ffffcc'; this.style.cursor='hand';" class="center" onMouseOut=this.style.backgroundColor="white" >         
+							<button type="button" class="buttonSize" onclick="LeaAM2016Q3a()"><B>Higher 2016 Q3 a</B></button>
+						</td>
+						
+						<td onMouseOver="this.style.backgroundColor='#ffffcc'; this.style.cursor='hand';" class="center" onMouseOut=this.style.backgroundColor="white" >         
+							<button type="button" class="buttonSize" onclick="LeaAM2015Q3a()"><B>Higher 2015 Q3 a</B></button>
+						</td>
+					</tr>
+					
+					<tr>
+						<td onMouseOver="this.style.backgroundColor='#ffffcc'; this.style.cursor='hand';" class="center" onMouseOut=this.style.backgroundColor="white" >         
+							<button type="button" class="buttonSize" onclick="LeaAM2014Q3a()"><B>Higher 2014 Q3 a</B></button>
+						</td>
+						
+						<td onMouseOver="this.style.backgroundColor='#ffffcc'; this.style.cursor='hand';" class="center" onMouseOut=this.style.backgroundColor="white" >         
+							<button type="button" class="buttonSize" onclick="LeaAM2013Q3b()"><B>Higher 2013 Q3 b</B></button>
+						</td>
+						
+						<td bgcolor="#f7ec8f" onMouseOver="this.style.backgroundColor='#ffffcc'; this.style.cursor='hand';" class="center" onMouseOut=this.style.backgroundColor="#f7ec8f" >         
+							<button type="button" bgcolor="#eef442" class="buttonSize" onclick="makeLeavingCertGUI()"><B>Build your own</B></button>
+						</td>
+					</tr>
+				</table>
+			</div>
+			
+			<!--Controls-->
+			<div     id="Controls">
+				<TABLE bgcolor=white border=1 BORDERCOLOR=black width="400" cellpadding=-10 cellspacing=0 >
+					<tr>
+						<td class="center">
+							<p style="color:red; font-size:20px;">PRESS BELOW</p>
+						</td>
+					</tr>
+				</table>
+				<TABLE bgcolor=white border=1 BORDERCOLOR=black width="400" cellpadding=10 cellspacing=0 >
+					<tr>
+						<td onMouseOver="this.style.backgroundColor='#ffffcc'; this.style.cursor='hand';" class="center" onMouseOut=this.style.backgroundColor="white" >         
+							<button type="button" class="buttonSize" onclick="startButton()"><B>Start</B></button>
+						</td>
+						
+						<td id="resultsButton" onMouseOver="this.style.backgroundColor='#ffffcc'; this.style.cursor='hand';" class="center" onMouseOut=this.style.backgroundColor="white" >         
+							<button type='button' class='buttonSize' onclick='QandADisplay()'><B>Show Q&A</B></button>
+						</td>
+					</tr>
+				</table>
+			</div>
+		
+		</div>
+		
+		<!-- Question and Answer-->
+		<div     id="QandA">
+		
+			<div     id="question">
+				<img id="examQuestion" src="" alt="" />
+			</div>
+			
+			<div     id="results">
+			</div>
+		
+		</div>
+		
+		<div     id="Legend">
+			<p>
+				<img class="legendImage" src="images/Legend/blue.png" /> the displacement <br> 
+				<img class="legendImage" src="images/Legend/red.jpg" /> the max height reached <br>
+				<img class="legendImage" src="images/Legend/White.png" /> the path of the ball <br> 
+				<img class="legendImage" src="images/Legend/black.png" /> where the ball first hit the ground
+			</p>
+		</div>
+	
+		<script src="js/ThirdParty/three.js" ></script> 
+		<script src='js/ThirdParty/MouseOperation.js'></script>
+		<script src="js/ThirdParty/mouse.camera.js"></script>
+		<script src='js/ThirdParty/dat.gui.min.js'></script>
+		<script src='js/ThirdParty/TrailRenderer.js'></script>
+		<script src='js/GlobalVariables.js'></script>
+		<script src='js/Rendering.js'></script>
+		<script src='js/Display.js'></script>
+		<script src='js/Lighting.js'></script>
+		<script src='js/GUI_junior_cert.js'></script>
+		<script src='js/GUI_leaving_cert.js'></script>
+		<script src='js/GUI_third_level.js'></script>
+		<script src='js/GUI_Buttons.js'></script>
+		<script src='js/Generate.js'></script>
+		<script src='js/Run.js'></script>
+
+		<script>
+			// resize
+			window.addEventListener('resize', onWindowResize, false);
+		
+			function onWindowResize() 
+			{
+				var w = window.innerWidth * 0.98;
+				var h = window.innerHeight * 0.975;  
+
+				camera.aspect = w / h;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize(w,h);
+			}
+		
+			generate();
+		</script>
+		
+	</body>
+
+</html>
